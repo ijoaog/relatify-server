@@ -1,8 +1,6 @@
 // auth/auth.controller.ts
 import { Controller, Post, Body, UseGuards, UnauthorizedException } from '@nestjs/common';
 import { AuthService } from './../service/auth.service';
-import { AuthGuard } from '@nestjs/passport';
-import { User } from './../../users/entities/user.entity';
 
 export class LoginDto {
   username: string;
