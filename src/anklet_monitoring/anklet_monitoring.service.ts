@@ -4,32 +4,35 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { CreateAnkletMonitoringDto } from './dto/create-anklet_monitoring.dto';
 import { UpdateAnkletMonitoringDto } from './dto/update-anklet_monitoring.dto';
 import { MonitoringReport } from './entities/anklet_monitoring.entity';
-import { Repository } from 'typeorm';
+import { Between, Repository } from 'typeorm';
 
 @Injectable()
 export class AnkletMonitoringService {
   constructor(
     @InjectRepository(MonitoringReport)
-    private readonly monitoringReportRepository: Repository<MonitoringReport>, // Injeção do repositório
+    private readonly monitoringReportRepository: Repository<MonitoringReport>,
   ) {}
 
-  create(createAnkletMonitoringDto: CreateAnkletMonitoringDto) {
-    return 'This action adds a new ankletMonitoring';
-  }
-
   async findAll() {
-    return await this.monitoringReportRepository.find(); // Busca todos os detentos
+    return await this.monitoringReportRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} ankletMonitoring`;
-  }
-
-  update(id: number, updateAnkletMonitoringDto: UpdateAnkletMonitoringDto) {
-    return `This action updates a #${id} ankletMonitoring`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} ankletMonitoring`;
+  async findLastMonthReports() {
+    const currentDate = new Date();
+  
+    const lastMonthStartDate = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth() - 1,
+      1
+    );
+    const lastMonthEndDate = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      0
+    );
+  
+    return this.monitoringReportRepository.find({
+      where: { updatedAt: Between(lastMonthStartDate, lastMonthEndDate) }
+    });
   }
 }
