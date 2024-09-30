@@ -31,7 +31,6 @@ export class User {
   @Column({ type: 'varchar', length: 50, nullable: true })
   district: string;
 
-  // Adicione a coluna CPF
   @Column({ type: 'varchar', length: 11, unique: true, nullable: false })
   cpf: string;
 
