@@ -1,7 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get} from '@nestjs/common';
 import { AnkletMonitoringService } from './anklet_monitoring.service';
-import { CreateAnkletMonitoringDto } from './dto/create-anklet_monitoring.dto';
-import { UpdateAnkletMonitoringDto } from './dto/update-anklet_monitoring.dto';
 
 @Controller('anklet-monitoring')
 export class AnkletMonitoringController {
