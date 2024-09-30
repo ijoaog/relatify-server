@@ -7,28 +7,13 @@ import { UpdateAnkletMonitoringDto } from './dto/update-anklet_monitoring.dto';
 export class AnkletMonitoringController {
   constructor(private readonly ankletMonitoringService: AnkletMonitoringService) {}
 
-  @Post()
-  create(@Body() createAnkletMonitoringDto: CreateAnkletMonitoringDto) {
-    return this.ankletMonitoringService.create(createAnkletMonitoringDto);
-  }
-
   @Get()
   findAll() {
     return this.ankletMonitoringService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.ankletMonitoringService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateAnkletMonitoringDto: UpdateAnkletMonitoringDto) {
-    return this.ankletMonitoringService.update(+id, updateAnkletMonitoringDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.ankletMonitoringService.remove(+id);
+  @Get('last-month')
+  findLastMonth() {
+    return this.ankletMonitoringService.findLastMonthReports();
   }
 }
