@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
-import { CreateAnkletMonitoringDto } from './dto/create-anklet_monitoring.dto';
-import { UpdateAnkletMonitoringDto } from './dto/update-anklet_monitoring.dto';
 import { MonitoringReport } from './entities/anklet_monitoring.entity';
 import { Between, Repository } from 'typeorm';
 
