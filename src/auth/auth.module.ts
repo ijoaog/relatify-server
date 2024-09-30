@@ -4,18 +4,18 @@ import { AuthService } from './service/auth.service';
 import { JwtModule } from '@nestjs/jwt';
 import { UsersModule } from './../users/users.module';
 import { AuthController } from './controller/auth.controller';
-import { JwtStrategy } from './service/jwt.strategy'; // Crie este arquivo a seguir
+import { JwtStrategy } from './service/jwt.strategy';
 
 @Module({
   imports: [
     UsersModule,
     JwtModule.register({
-      secret: process.env.JWT_SECRET || 'default_secret', // Use uma variável de ambiente
-      signOptions: { expiresIn: '60s' }, // Ajuste o tempo de expiração conforme necessário
+      secret: process.env.JWT_SECRET || 'default_secret',
+      signOptions: { expiresIn: '1h' },
     }),
   ],
   providers: [AuthService, JwtStrategy],
   controllers: [AuthController],
-  exports: [AuthService], // Para que outros módulos possam usar o AuthService
+  exports: [AuthService],
 })
 export class AuthModule {}

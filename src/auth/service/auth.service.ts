@@ -31,17 +31,14 @@ export class AuthService {
 
     try {
       const token = this.jwtService.sign(payload, {
-        secret: process.env.JWT_SECRET,
         expiresIn: '1h',
       });
-      
+
       return {
         access_token: token,
       };
     } catch (error) {
-      throw new Error(
-        'Não foi possivel fazer login.',
-      );
+      throw new Error('Não foi possível fazer login.');
     }
   }
 }
