@@ -5,7 +5,6 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { User } from './../../users/entities/user.entity'; // Importe sua entidade de usuário
 import { Detainee } from './../../monitored_individuals/entities/monitored_individual.entity'; // Importe sua entidade de prisioneiro
 
 @Entity('monitoring_reports')
@@ -13,13 +12,10 @@ export class MonitoringReport {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @JoinColumn({ name: 'user_id' }) // Nome da coluna na tabela
-  user: User;
-
   @ManyToOne(() => Detainee, (detainee) => detainee.monitoringReports, {
     eager: true,
-  }) // Relacionamento com a entidade Prisoner
-  @JoinColumn({ name: 'prisoner_id' }) // Nome da coluna na tabela
+  })
+  @JoinColumn({ name: 'detainee_id' })
   detainee: Detainee;
 
   @Column({ name: 'device_serial', type: 'varchar', length: 100 })
