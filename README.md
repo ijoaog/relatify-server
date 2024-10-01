@@ -17,19 +17,19 @@ Siga os passos abaixo para iniciar a aplicação:
    npm install
    ```
 
-2. **Coloque o arquivo .env na raiz**:
+3. **Coloque o arquivo .env na raiz**:
 
    ```bash
    Seguir o arquivo .env.example
    ```
 
-3. **Inicie a aplicação**:
+4. **Inicie a aplicação**:
 
    ```bash
    npm start
    ```
 
-3. **Inicie a aplicação em modo de desenvolvimento**:
+5. **Inicie a aplicação em modo de desenvolvimento**:
 
    ```bash
    npm run start:dev
