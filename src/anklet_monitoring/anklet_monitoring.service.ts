@@ -30,7 +30,7 @@ export class AnkletMonitoringService {
     );
   
     return this.monitoringReportRepository.find({
-      where: { updatedAt: Between(lastMonthStartDate, lastMonthEndDate) }
+      where: { updated_at: Between(lastMonthStartDate, lastMonthEndDate) }
     });
   }
 }

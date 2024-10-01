@@ -19,13 +19,13 @@ export class MonitoringReport {
   detainee: Detainee;
 
   @Column({ name: 'device_serial', type: 'varchar', length: 100 })
-  deviceSerial: string;
+  device_serial: string;
 
   @Column({ name: 'install_date', type: 'date' })
-  installDate: Date;
+  install_date: Date;
 
   @Column({ name: 'removal_date', type: 'date', nullable: true })
-  removalDate?: Date;
+  removal_date?: Date;
 
   @Column({
     type: 'enum',
@@ -38,7 +38,7 @@ export class MonitoringReport {
   location?: string;
 
   @Column({ name: 'last_violation', type: 'timestamp', nullable: true })
-  lastViolation?: Date;
+  last_violation?: Date;
 
   @Column({ type: 'text', nullable: true })
   alerts?: string;
@@ -51,7 +51,7 @@ export class MonitoringReport {
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP',
   })
-  createdAt: Date;
+  created_at: Date;
 
   @Column({
     name: 'updated_at',
@@ -59,5 +59,5 @@ export class MonitoringReport {
     default: () => 'CURRENT_TIMESTAMP',
     onUpdate: 'CURRENT_TIMESTAMP',
   })
-  updatedAt: Date;
+  updated_at: Date;
 }
