@@ -17,8 +17,6 @@ export class UsersService {
   ) {}
 
   async create(userData: CreateUserDto): Promise<User> {
-    console.log('userData:', userData);
-
     const existingUser = await this.userRepository.findOne({
       where: { cpf: userData.cpf },
     });
