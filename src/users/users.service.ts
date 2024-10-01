@@ -112,8 +112,8 @@ export class UsersService {
 			<div class="container">
 			<h1>Dados do Usuário</h1>
 			<div class="important">
-				<p><strong>Username:</strong> <code>${username}</code></p>
-				<p><strong>Password:</strong> <code>${password}</code></p>
+				<p><strong>Usuário:</strong> <code>${username}</code></p>
+				<p><strong>Senha:</strong> <code>${password}</code></p>
 			</div>
 			<p>Por favor, mantenha esses dados em segurança e não os compartilhe com ninguém.</p>
 			<p>Se você não solicitou essa alteração, entre em contato com o suporte imediatamente.</p>

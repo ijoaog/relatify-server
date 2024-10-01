@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { MonitoringReport } from './../../anklet_monitoring/entities/anklet_monitoring.entity'; // Importe a entidade MonitoringReport
+import { MonitoringReport } from './../../anklet_monitoring/entities/anklet_monitoring.entity';
 
 @Entity('detainee')
 export class Detainee {
@@ -40,5 +40,5 @@ export class Detainee {
     () => MonitoringReport,
     (monitoringReport) => monitoringReport.detainee,
   )
-  monitoringReports: MonitoringReport[]; // Propriedade que representa os relatórios de monitoramento
+  monitoringReports: MonitoringReport[];
 }

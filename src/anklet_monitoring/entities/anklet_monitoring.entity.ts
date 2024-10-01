@@ -5,7 +5,7 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { Detainee } from './../../monitored_individuals/entities/monitored_individual.entity'; // Importe sua entidade de prisioneiro
+import { Detainee } from './../../monitored_individuals/entities/monitored_individual.entity';
 
 @Entity('monitoring_reports')
 export class MonitoringReport {

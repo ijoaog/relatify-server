@@ -11,7 +11,7 @@ export class AuthMiddleware implements NestMiddleware {
 
   use(req: Request, res: Response, next: NextFunction) {
     const authHeader = req.headers['authorization'];
-
+    
     if (!authHeader || authHeader !== `Bearer ${this.staticToken}`) {
       throw new UnauthorizedException('Token inválido ou não fornecido');
     }
